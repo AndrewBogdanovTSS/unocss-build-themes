@@ -1,0 +1,69 @@
+{
+  "name": "unocss-build-themes",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@12.16.1",
+  "description": "Build-time themes for UnoCSS: remove inactive theme classes from HTML, JS and CSS, one build per white-label customer",
+  "author": "Andrii Bohdanov",
+  "license": "MIT",
+  "homepage": "https://github.com/AndrewBogdanovTSS/unocss-build-themes#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewBogdanovTSS/unocss-build-themes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AndrewBogdanovTSS/unocss-build-themes/issues"
+  },
+  "keywords": [
+    "unocss",
+    "unocss-transformer",
+    "themes",
+    "theming",
+    "white-label",
+    "multi-tenant",
+    "build-time"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "play": "pnpm -C playground dev",
+    "compare": "pnpm -C playground compare",
+    "release": "bumpp",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "@unocss/core": ">=66.12.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^9.5.1",
+    "@arethetypeswrong/core": "^0.18.2",
+    "@types/node": "^26.6.5",
+    "@unocss/core": "^66.12.0",
+    "@unocss/preset-attributify": "^66.12.0",
+    "@unocss/preset-mini": "^66.12.0",
+    "@unocss/transformer-attributify-jsx": "^66.12.0",
+    "@unocss/transformer-compile-class": "^66.12.0",
+    "@unocss/transformer-directives": "^66.12.0",
+    "@unocss/transformer-variant-group": "^66.12.0",
+    "bumpp": "^12.3.0",
+    "eslint": "^10.13.0",
+    "magic-string": "^1.4.4",
+    "publint": "^0.3.25",
+    "tsdown": "^0.23.2",
+    "typescript": "6.0.3",
+    "vitest": "^5.0.5"
+  }
+}

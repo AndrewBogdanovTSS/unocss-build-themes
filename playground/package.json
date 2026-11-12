@@ -1,0 +1,20 @@
+{
+  "name": "playground",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "compare": "node compare.mjs"
+  },
+  "devDependencies": {
+    "unocss": "^66.12.0",
+    "unocss-build-themes": "workspace:*",
+    "vite": "^8.3.5"
+  },
+  "stackblitz": {
+    "installDependencies": false,
+    "startCommand": "node .stackblitz.js && npm install && npm run dev"
+  }
+}
