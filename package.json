@@ -1,7 +1,7 @@
 {
   "name": "unocss-build-themes",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "packageManager": "pnpm@12.16.1",
   "description": "Build-time themes for UnoCSS: remove inactive theme classes from HTML, JS and CSS, one build per white-label customer",
   "author": "Andrii Bohdanov",
