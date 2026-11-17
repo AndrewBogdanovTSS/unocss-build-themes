@@ -276,6 +276,11 @@ describe('unocss-build-themes', () => {
     expect(css).toContain('.globex\\:hover\\:c-blue:hover{')
   })
 
+  it('variantBuildThemes offers every facet value to autocompletion', () => {
+    const templates = variantBuildThemes(options).map(variant => typeof variant === 'function' ? undefined : variant.autocomplete)
+    expect(templates).toEqual(['acme:', 'globex:', 'standard:', 'premium:'])
+  })
+
   it('emits no CSS and no markup for inactive themes', async () => {
     const uno = await createGenerator({ presets: [presetMini()] })
     const source = '<div class="p-2 acme:c-red globex:c-blue premium:bg-black standard:bg-white">'

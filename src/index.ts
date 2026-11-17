@@ -816,8 +816,8 @@ async function assertNoVariantCollision(uno: UnoGenerator<any>, names: string[])
 /**
  * Registers every facet value as a no-op variant, so that editor tooling
  * (VS Code extension, `@unocss/eslint-plugin`) recognizes `acme:c-red` in
- * source. The transformer has already removed the prefixes by the time CSS
- * is generated in a build.
+ * source and autocompletion offers `acme:`. The transformer has already
+ * removed the prefixes by the time CSS is generated in a build.
  */
 export function variantBuildThemes(options: TransformerBuildThemesOptions): Variant[] {
   return resolveFacets(options).values.map((name): Variant => {
@@ -825,6 +825,7 @@ export function variantBuildThemes(options: TransformerBuildThemesOptions): Vari
     return {
       name: `${VARIANT_NAME_PREFIX}${name}`,
       match: matcher => matcher.startsWith(prefix) ? { matcher: matcher.slice(prefix.length) } : undefined,
+      autocomplete: prefix,
     }
   })
 }

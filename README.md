@@ -206,7 +206,7 @@ export default defineConfig({
 })
 ```
 
-`variantBuildThemes` registers every facet value as a no-op variant. In a build, the prefixes are already gone by the time CSS is generated.
+`variantBuildThemes` registers every facet value as a no-op variant, with an autocomplete template, so the VS Code extension offers `acme:` as you type. In a build, the prefixes are already gone by the time CSS is generated.
 
 It also keeps class order stable. The [`unocss/order`](https://unocss.dev/integrations/eslint#rules) rule sorts facet values like any other variant, so themed classes come after unprefixed ones. The helper registers every facet value whatever `active` is, so the order is the same for every build. Without it, themed classes are unknown to the sorter and stay at the front, in source order.
 
